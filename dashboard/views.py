@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 from .models import *
 from .forms import *
+from django.views import generic
 
 # Create your views here.
 def home(request):
@@ -27,3 +28,6 @@ def notes(request):
 def delete_note(request, pk=None):
     Notes.objects.get(id=pk).delete()
     return redirect('notes')
+
+class NotesDetailView(generic.DetailView):
+    model = Notes

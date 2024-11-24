@@ -7,7 +7,7 @@
     <div class="row row-gap-3">
         {% for note in notes %}
         <div class="col-md-3 d-flex">
-            <a href="#" class="w-100">
+            <a href="{% url 'notes_detail' note.id %}" class="w-100">
                 <div class="card card-uniform">
                     <div class="card-header" style="font-size: 1.5rem; font-weight: bold;">
                         {{ note.title }}
